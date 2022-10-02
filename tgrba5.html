@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <title>shaitt</title>
+        <style>
+       button img {
+        width:50px;
+        height: 45px;
+       }
+      .d{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        cursor:pointer;
+       }
+       .d:hover {
+        transform: scale(1.1);
+        transition:0.5s;
+       }
+       div {
+        background-color: rgb(15, 239, 239);
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left:200px;
+       }
+       p {
+        position: absolute;
+        left:220px;
+        animation: mymove 2s 4;
+  animation-delay: 0s;
+       }
+       @keyframes mymove {
+  from {top:180px;}
+  to {top:5px;}
+  
+}
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <p>animation</p>
+        <button onclick="mntr1()" onmouseenter="stop()" onmouseleave="mnr()" ><img src="11.png" /></button>
+        <img class="d" src="0.jpg" id="d1"  onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:-200;" />
+        <img class="d" src="1.jpg" id="d2" onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:100;" />
+        <img class="d" src="2.jpg" id="d3" onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:400;" />
+        <img class="d" src="3.jpg" id="d4" onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:700;" />
+        <img class="d" src="4.jpg" id="d5" onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:1000;" />
+        <img class="d" src="5.jpg" id="d6" onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:1300;" />
+        <img class="d" src="6.jpg" id="d7" onmouseenter="stop()" onmouseleave="mnr()" style="top:250px;left:1600;" />
+        <script>
+            let d1=document.getElementById("d1");
+        let d2=document.getElementById("d2");
+        let d3=document.getElementById("d3");
+        let d4=document.getElementById("d4");
+        let d5=document.getElementById("d5");
+        let d6=document.getElementById("d6");
+        let d7=document.getElementById("d7");
+        let ani;
+        let mx,my,mz,ma,mb,mc,md;
+        let x=-200,y=100,z=400,a=700,b=1000,c=1300,d=1600;
+        function mnr() {
+          x=x+100;
+          y=y+100;
+          z=z+100;
+          a=a+100;
+          b=b+100;
+          c=c+100;
+          d=d+100;      
+          d1.style.left=x;
+          d2.style.left=y;
+          d3.style.left=z;
+          d4.style.left=a;
+          d5.style.left=b;
+          d6.style.left=c;
+          d7.style.left=d;
+          if(x>1400){
+            d1.style.display='none';
+          }
+          if(x>1800){
+            x=-200;
+            d1.style.display='block';
+          }    
+          if(y>1400){
+            d2.style.display='none';
+          }
+          if(y>1800){
+            y=-200;
+            d2.style.display='block';
+          }        
+          if(z>1400){
+            d3.style.display='none';
+          }
+          if(z>1800){
+            z=-200;
+            d3.style.display='block';
+          }        
+          if(a>1400){
+            d4.style.display='none';
+          }
+          if(a>1800){
+            a=-200;
+            d4.style.display='block';
+          }        
+          if(b>1400){
+            d5.style.display='none';
+          }
+          if(b>1800){
+            b=-200;
+            d5.style.display='block';
+          }        
+          if(c>1400){
+            d6.style.display='none';
+          }
+          if(c>1800){
+            c=-200;
+            d6.style.display='block';
+          }        
+          if(d>1400){
+            d7.style.display='none';
+          }
+          if(d>1800){
+            d=-200;
+            d7.style.display='block';
+          }        
+          ani= setTimeout("mnr()",1000);
+         mx=x;
+         my=y;
+         mz=z;
+         ma=a;
+         mb=b;
+         mc=c;
+         md=d;
+        }
+        mnr();
+        function stop(){
+            clearTimeout(ani);
+        } 
+        function mntr1(){
+          x=mx-300; 
+          y=my-300;
+          z=mz-300; 
+          a=ma-300;
+          b=mb-300; 
+          c=mc-300;
+          d=md-300;  
+        }
+     
+        </script>
+    </body>
+</html>
